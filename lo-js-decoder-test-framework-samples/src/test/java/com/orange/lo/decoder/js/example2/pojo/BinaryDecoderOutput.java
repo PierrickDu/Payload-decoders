@@ -7,6 +7,8 @@
 
 package com.orange.lo.decoder.js.example2.pojo;
 
+import java.util.OptionalDouble;
+
 import com.orange.lo.decoder.js.doc.annotation.FieldDescription;
 import com.orange.lo.decoder.js.doc.annotation.OutputPojo;
 import lombok.Data;
@@ -29,6 +31,18 @@ public class BinaryDecoderOutput {
         public Float lon;
         @FieldDescription(description = "altitude in meters")
         public Float alt;
+
+        public Float getLat() {
+            return lat;
+        }
+
+        public Float getLon() {
+            return lat;
+        }
+
+        public Float getAlt() {
+            return lat;
+        }
     }
 
     @Data
@@ -49,6 +63,16 @@ public class BinaryDecoderOutput {
             public Float value;
             @FieldDescription(description = "°C")
             public String unit;
+
+            public Float getValue() {
+                return value;
+            }
+            public String getUnit() {
+                return unit;
+            }
+        }
+        public CurrentTemperature getCurrentTemperature() {
+            return currentTemperature;
         }
     }
 
@@ -62,6 +86,33 @@ public class BinaryDecoderOutput {
             public Integer value;
             @FieldDescription(description = "%")
             public String unit;
+
+            public Integer getValue() {
+                return value;
+            }
+            public String getUnit() {
+                return unit;
+            }
         }
+
+        public Level getLevel() {
+            return level;
+        }
+    }
+
+    public Battery getBattery() {
+        return battery;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public String getLed() {
+        return led;
+    }
+
+    public Temperature getTemperature() {
+        return temperature;
     }
 }

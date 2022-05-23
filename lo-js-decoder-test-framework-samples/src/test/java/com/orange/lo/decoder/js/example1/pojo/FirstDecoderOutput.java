@@ -7,6 +7,8 @@
 
 package com.orange.lo.decoder.js.example1.pojo;
 
+import java.util.OptionalDouble;
+
 import com.orange.lo.decoder.js.doc.annotation.FieldDescription;
 import com.orange.lo.decoder.js.doc.annotation.OutputPojo;
 import lombok.Data;
@@ -15,5 +17,10 @@ import lombok.Data;
 @OutputPojo
 public class FirstDecoderOutput {
     @FieldDescription(description = "field description")
-    private String field1;
+    private double field1;
+
+    public OptionalDouble getField1() {
+        OptionalDouble od = OptionalDouble.of(field1);
+        return od;
+    }
 }

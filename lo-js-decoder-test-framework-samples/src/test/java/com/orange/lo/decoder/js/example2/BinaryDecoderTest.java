@@ -33,6 +33,7 @@ public class BinaryDecoderTest extends TestBase {
         BinaryDecoderOutput simpleBinaryDecoderOutput = formatAndDecode(SCRIPT_PATH, input, BinaryDecoderOutput.class);
 
         // Assertions to check that the decoded payload is compliant with the expected result
+       
         assertThat(simpleBinaryDecoderOutput.getBattery().getLevel().getValue()).isEqualTo(14);
         assertThat(simpleBinaryDecoderOutput.getBattery().getLevel().getUnit()).isEqualTo("%");
         assertThat(simpleBinaryDecoderOutput.getLocation().getLat()).isEqualTo(48.80056f);
@@ -41,6 +42,6 @@ public class BinaryDecoderTest extends TestBase {
         assertThat(simpleBinaryDecoderOutput.getLed()).isEqualTo("ON");
         assertThat(simpleBinaryDecoderOutput.getTemperature().getCurrentTemperature().getValue()).isEqualTo(26.5f);
         assertThat(simpleBinaryDecoderOutput.getTemperature().getCurrentTemperature().getUnit()).isEqualTo("°C");
-
+        
     }
 }
